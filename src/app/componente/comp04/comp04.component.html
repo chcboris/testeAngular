@@ -1,0 +1,57 @@
+<form #mf="ngForm" (submit)="submeteu(mf)">
+    <input type="text" placeholder="texto" name="texto" [(ngModel)]="texto"/>
+	<input type="email" placeholder="email" name="email" [(ngModel)]="email"/> 
+	<input type="url" placeholder="url" name="url" [(ngModel)]="url"/> 
+	<input type="number" placeholder="number" name="num" [(ngModel)]="num"/> 
+	<input type="date" name="dt" [(ngModel)]="dt"/> 
+	<input type="time" name="tm" [(ngModel)]="tm"/>  
+	<input type="month" name="mes" [(ngModel)]="mes"/> 
+	<input type="week" name="sem" [(ngModel)]="sem"/> 
+	<input type="password" placeholder="senha" name="senha" [(ngModel)]="senha"> 
+	<input type="tel" placeholder="telefone" name="tel" [(ngModel)]="tel"> <!--pattern="(0-9]{2}[0-9]{3}-[0-9]{4}"-->
+
+	<select  name="sel" [(ngModel)]="sel">
+		<option value="html">html</option>
+		<option value="url">url</option>
+		<option value="js">js</option>
+	</select> 
+	<select multiple>
+		<option value="html">html</option>
+		<option value="url">url</option>
+		<option value="js">js</option>
+	</select> 
+
+
+	<input type="text" list="dl" placeholder="auto complete" />
+	<datalist id="dl">
+		<option value="html">html</option>
+		<option value="url">url</option>
+		<option value="js">js</option>
+	</datalist>	
+
+	<div>
+		<input type="radio"  [value]="'A'" name="escolha" [(ngModel)]="escolha"/> Opção A 
+		<input type="radio"  [value]="'B'" name="escolha" [(ngModel)]="escolha"/> Opção B 
+	</div>
+
+	<div>
+		<input type="checkbox" name="chk" [(ngModel)]="chk"/> Opção C 
+	</div>
+
+	<div>
+		<label for="lbl">Label:</label> 
+		<input type="text" placeholder="label" id="lbl" name="lbl" [(ngModel)]="lbl"/> 
+	</div>	
+
+	<textarea id="story" rows="5" cols="33" name="area" [(ngModel)]="area">
+	</textarea>
+
+	<input type="button" value="ação" name="bt" (click)="clicou()"/> 
+
+	<input type="submit" value="submit"  /> 
+
+	<input type="reset" value="reset" />
+
+</form>
+
+<a routerLink="/">Página inicial</a>

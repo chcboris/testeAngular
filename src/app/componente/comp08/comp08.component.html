@@ -1,0 +1,10 @@
+<form  [formGroup]="myForm" (submit)="submeteu()">
+
+    <input type="text" placeholder="texto" formControlName="campo1" (keyup)="alterarTexto()"/>
+    <input type="text" placeholder="texto" formControlName="campo2" (keyup)="alterarTexto()"/>
+
+	<input type="submit" value="submit" /> 
+
+</form>
+
+<a routerLink="/">Página inicial</a>

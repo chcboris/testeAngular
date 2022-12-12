@@ -1,0 +1,61 @@
+
+<span *ngIf="elCampo1.dirty &&  elCampo1.errors?.required">Campo 1 preenchimento obrigatorio</span>
+
+<span *ngIf="elCampo2.dirty &&  elCampo2.errors?.minlength">Campo 2 preenchimento mínimo de 3 caracteres</span>
+
+<span *ngIf="elCampo3.dirty &&  elCampo3.errors?.maxlength">Campo 3 preenchimento máximo de 3 caracteres</span>
+
+<span *ngIf="elCampo4.dirty &&  elCampo4.invalid">Campo 4 preenchimento de email</span>
+
+<span *ngIf="elCampo5.dirty &&  elCampo5.invalid">Campo 5 pattern errado</span>
+
+<form #mf="ngForm" (submit)="submeteu(mf)">
+    
+    <input  type="text" 
+            placeholder="requerido" 
+            name="campo1" 
+            [(ngModel)]="campo1" 
+            required
+            #elCampo1="ngModel"
+            (change)="habilita(elCampo1.value)"/>
+    
+
+    <input  type="text" 
+            placeholder="minimo" 
+            name="campo2" 
+            [(ngModel)]="campo2"  
+            #elCampo2="ngModel" 
+            minlength="3" />
+
+    <input  type="text" 
+            placeholder="maximo" 
+            name="campo3" 
+            [(ngModel)]="campo3"
+            #elCampo3="ngModel" 
+            maxlength="3" />
+
+    <input  type="email" 
+            placeholder="email" 
+            name="campo4" 
+            [(ngModel)]="campo4"
+            #elCampo4="ngModel"/>
+
+    <input  type="email" 
+            placeholder="email pattern" 
+            name="campo41" 
+            [(ngModel)]="campo41"
+            #elCampo41="ngModel"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+
+    <input  type="text" 
+            placeholder="pattern" 
+            name="campo5" 
+            [(ngModel)]="campo5"
+            #elCampo5="ngModel"
+            pattern="[a-z]"/>
+
+    <input type="submit" value="submit" [disabled]="elCampo1.invalid" /> 
+    <input type="reset" value="reset" [disabled]="habilitado()" (click)="resetou(mf)" /> 
+</form>
+
+<a routerLink="/">Página inicial</a>

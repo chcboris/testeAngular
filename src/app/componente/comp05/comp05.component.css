@@ -1,0 +1,28 @@
+form {
+    background-color: green;
+    width: 500px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+input, select, a {
+	display: block;
+	margin: 5px;
+}
+
+fieldset {
+    width: 50px;
+}
+
+div > input {
+    display: inline;
+    margin: 10px;
+}
+
+input:valid {
+  background-color: powderblue;
+}
+
+input:invalid {
+  background-color: pink;
+}

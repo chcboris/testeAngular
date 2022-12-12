@@ -1,0 +1,28 @@
+<span *ngIf="!texto1.pristine && texto1?.errors && texto1?.errors?.required">Campo 1 preenchimento obrigatorio</span>
+<span *ngIf="!texto2.pristine && texto2?.errors?.minlength">Campo 2 minimo 3 caracteres</span>
+<span *ngIf="!texto3.pristine && texto3?.errors?.maxlength">Campo 3 maximo 4 caracteres</span>
+<span *ngIf="!texto4.pristine && texto4?.errors?.email">Campo 4 preenchimento e-mail obrigatorio</span>
+<span *ngIf="!texto5.pristine && texto5?.invalid">Campo 5 preenchimento só em minusculo</span>
+<span *ngIf="!texto6.pristine && texto6?.errors?.aval">Campo 6 função de validação</span>
+<!--<span *ngIf="!texto7.pristine && && texto7?.errors?.required">Campo 7 validação multipla requerido </span>
+<span *ngIf="!texto7.pristine && && texto7?.errors?.minlength">Campo 7 validação multipla minimo </span>-->
+
+<form  [formGroup]="myForm" (submit)="submeteu()">
+	<input type="text" placeholder="texto1 " formControlName="texto1" />
+	<input type="text" placeholder="texto2" formControlName="texto2"/>
+	<input type="text" placeholder="texto3" formControlName="texto3"/>
+	<input type="email" placeholder="texto4" formControlName="texto4"/>
+	<input type="text" placeholder="texto5" formControlName="texto5"/>
+	<input type="text" placeholder="texto6" formControlName="texto6"/>
+	<!--<input type="text" placeholder="texto7" formControlName="texto7"/>-->
+
+	<input type="submit" value="submit" /> 
+
+	<input type="reset" value="reset" />
+
+</form>
+<!--{{myForm.get('texto').value}}
+<span *ngIf="myForm.get('texto').dirty">Campo 1 preenchimento obrigatorio</span>
+-->
+
+<a routerLink="/">Página inicial</a>

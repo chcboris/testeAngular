@@ -1,0 +1,24 @@
+<form #mf="ngForm" (submit)="submeteu(mf)">
+ 
+	<select  name="sel" [(ngModel)]="sel">
+        <option *ngFor="let item of lst" [ngValue]="item">{{item.letra}}</option>
+		
+    </select> 
+    
+	<select multiple   name="lista" [(ngModel)]="lista"> 
+        <option *ngFor="let item of lst">{{item.letra}}</option>
+	</select> 
+
+
+	<input type="text" list="dl" placeholder="auto complete"   name="auto" [(ngModel)]="auto" />
+	<datalist id="dl">
+        <option *ngFor="let item of lst">{{item.letra}}</option>
+	</datalist>	
+
+
+	<input type="submit" value="submit"  /> 
+
+</form>
+
+<a routerLink="/">Página inicial</a>
+
